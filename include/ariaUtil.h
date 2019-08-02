@@ -32,7 +32,7 @@ Adept MobileRobots, 10 Columbia Drive, Amherst, NH 03031; +1-603-881-7960
 // #define _XOPEN_SOURCE 500
 #include <list>
 #include <map>
-#include <math.h>
+#include <cmath>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -72,6 +72,7 @@ class ArDeviceConnection;
 /** @ingroup UtilityClasses
     @ingroup ImportantClasses
 */
+
 class ArUtil
 {
 public:
@@ -705,7 +706,7 @@ public:
 #ifdef WIN32
     return _isnan(d);
 #else 
-    return isnan(d);
+    return std::isnan(d);
 #endif
   }
 
@@ -713,7 +714,7 @@ public:
 #ifdef WIN32
 	  return _isnan(f);
 #else
-	  return isnan(f);
+	  return std::isnan(f);
 #endif
   }
 
@@ -721,7 +722,7 @@ public:
 #ifdef WIN32
 	  return _finite(f);
 #else
-	  return isfinite(f);
+	  return std::isfinite(f);
 #endif
   }
 
@@ -729,7 +730,7 @@ public:
 #ifdef WIN32
 	  return _finite(d);
 #else
-	  return isfinite(d);
+	  return std::isfinite(d);
 #endif
   }
 

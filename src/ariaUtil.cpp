@@ -135,7 +135,6 @@ const char  ArUtil::OTHER_SEPARATOR_CHAR = '\\';
 ArMutex ArUtil::ourLocaltimeMutex;
 #endif
 
-
 /**
   Sleep (do nothing, without continuing the program) for @arg ms miliseconds.
   Use this to add idle time to threads, or in situations such as waiting for
@@ -2065,7 +2064,7 @@ AREXPORT bool ArUtil::floatIsNormal(double f)
 #ifdef WIN32
 	  return (!::_isnan(f) && ::_finite(f));
 #else
-	  return isnormal(f);
+	  return std::isnormal(f);
 #endif
 }
 
